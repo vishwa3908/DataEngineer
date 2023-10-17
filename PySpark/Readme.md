@@ -1,4 +1,4 @@
- **Start Spark Session**
+**Start Spark Session**
 
 from pyspark.sql import SparkSession
 
