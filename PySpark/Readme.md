@@ -1,4 +1,3 @@
-
 # PySpark
 
 A Project to practice all pyspark functionalities
@@ -96,3 +95,44 @@ any - if any row contains a null data
 thresh - If non NULL values of particular row or column is less than thresh value then drop that row or column.
 
     df.na.drop(how='any/all',thresh=3,subset=['',''])
+
+## UDF
+
+USER DEFINED FUNCTION
+
+#### FIRST WAY
+
+    def total(s,b):
+        return s+b
+    from pyspark.sql.types import IntegerType
+    from pyspark.sql.functions import udf
+
+    tl = udf(lambda s,b:total(s,b),IntegerType())
+    df.withColumn('tp',tl(df.s,df.b))
+
+#### SECOND WAY
+
+    @udf(return)
+
+# Transformation
+
+## concat
+
+    df = df.withColumn("FullName",concat(df.first_name,df.last_name))
+
+## concat_ws
+
+    df = df.withColumn("FullName",concat_ws(" ",df.first_name,df.last_name))
+
+## concat vs concat_ws
+
+Both CONCAT() and CONCAT_WS() functions are used to concatenate two or more strings but the basic difference between them is that CONCAT_WS() function can do the concatenation along with a separator between strings, whereas in CONCAT() function there is no concept of the separator. Other significance difference between them is that CONCAT()function returns NULL if any of the argument is NULL, whereas CONCAT_WS() function returns NULL if the separator is NULL.
+
+## when & otherwise
+
+when() function take 2 parameters, first param takes a condition and second takes a literal value or Column, if condition evaluates to true then it returns a value from second param
+
+    df2 = df.withColumn("new_gender", when(df.gender == "M","Male")
+                                 .when(df.gender == "F","Female")
+                                 .when(df.gender.isNull() ,"")
+                                 .otherwise(df.gender))
