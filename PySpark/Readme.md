@@ -25,6 +25,18 @@ If the csv file have a header (column names in the first row) then set header=tr
 
     df = spark.read.format("csv").load("")
 
+## Create Schema
+
+```
+schema = StructType([
+    StructField("ProductId",IntegerType(),True),
+    StructField("CustomerId",StringType(),True),
+    StructField("OrderDate",DateType(),True),
+    StructField("Location",StringType(),True),
+    StructField("SourceOrder",StringType(),True)]
+)
+```
+
 ## Print Schema of df
 
     df.printSchema()
