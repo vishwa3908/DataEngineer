@@ -8,8 +8,10 @@ A Project to practice all pyspark functionalities
 
 ## Start Spark Session
 
-    from pyspark.sql import SparkSession
-    spark = SparkSession.builder.appName('app').getOrCreate()
+```python
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.appName('app').getOrCreate()
+```
 
 ## Read Files
 
@@ -19,15 +21,16 @@ Header:
 
 If the csv file have a header (column names in the first row) then set header=true. This will use the first row in the csv file as the dataframe's column names. Setting header=false (default option) will result in a dataframe with default column names: _c0, _c1, _c2, etc.
 
-    df = spark.read.csv("",header=True)
+```python
+df = spark.read.csv("",header=True)  
+df = spark.read.option('header','true').csv("")  
+df = spark.read.format("csv").load("")
+```
 
-    df = spark.read.option('header','true').csv("")
-
-    df = spark.read.format("csv").load("")
 
 ## Create Schema
 
-```
+```python
 schema = StructType([
     StructField("ProductId",IntegerType(),True),
     StructField("CustomerId",StringType(),True),
@@ -35,38 +38,58 @@ schema = StructType([
     StructField("Location",StringType(),True),
     StructField("SourceOrder",StringType(),True)]
 )
+
+df = spark.read.format('csv').option('inferSchema','true').schema(schema).load("")
 ```
 
 ## Print Schema of df
 
-    df.printSchema()
+```python
+   df.printSchema()
+```
 
 ## Display df
 
-    df.head()
-    df.tail()
-    df.show()
+```python
+df.head()
+df.tail()
+df.show()
+```
 
 ## Display Columns
 
+```python
     df.columns
+```
 
 ## Selecting Coloumn
 
 #### Single Column
 
+```python
     df.select("").show()
+```
 
 #### Multiple Columns
 
-    df.select(["",""]).show()
+```python
+df.select(["",""]).show()
+```
 
 ## Adding New Column
+
+### Single Column
 
     * not a inplace function
     * if new column name is same as already existing column override will happen
 
     df.withColumn('index',df['status']+2)
+
+### Multiple Columns
+
+```python
+df = df.withColumns({'OrderedYear':year(df.OrderDate),'Month':month(df.OrderDate),'Quarter':quarter(df.OrderDate),'DayOfWeek':dayofweek(df.OrderDate)})
+```
 
 ## Drop Column
 
