@@ -27,7 +27,6 @@ df = spark.read.option('header','true').csv("")
 df = spark.read.format("csv").load("")
 ```
 
-
 ## Create Schema
 
 ```python
@@ -166,7 +165,6 @@ tl = udf(lambda s,b:total(s,b),IntegerType())
 df.withColumn('tp',tl(df.s,df.b))
 ```
 
-
 #### SECOND WAY
 
     @udf(return)
@@ -209,7 +207,6 @@ DataFrame.groupby(*cols)
 
 When we perform `groupBy()` on PySpark Dataframe, it returns `GroupedData` object which contains below aggregate functions.
 
-
 `count()` – Use [groupBy() count()](https://sparkbyexamples.com/pyspark/pyspark-groupby-count-explained/) to return the number of rows for each group.
 
 `mean()` – Returns the mean of values for each group.
@@ -230,3 +227,31 @@ When we perform `groupBy()` on PySpark Dataframe, it returns `GroupedData` objec
 df.groupBy("department").sum("salary").show(truncate=False)
 sales_df.groupBy(['CustomerId','ProductId','SourceOrder']).sum('ProductPrice').orderBy('CustomerId').show()
 ```
+
+### Sort and orderBy
+
+```python
+df.sort("column1", "column2", ascending=[True, False]) 
+df.orderBy(col("department"),col("state")).show(truncate=False)
+df.sort(col("department").asc(),col("state").asc()).show(truncate=False)
+```
+
+### Union vs UnionByName
+
+#### Union
+
+Union is applied on df having same number of columns. if columns are same then it will work perfectly. order of columns must be same
+
+```python
+df = df_1.union(df_2)
+```
+
+#### UnionByName
+
+it is used  if columns name are different, order of column is different , number of columns may be same or not
+
+```python
+df = df_1.unionByName(df_2,allowMissingColumns=True)
+```
+
+### Joins
