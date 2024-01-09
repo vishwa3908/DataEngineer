@@ -254,4 +254,54 @@ it is used  if columns name are different, order of column is different , number
 df = df_1.unionByName(df_2,allowMissingColumns=True)
 ```
 
-### Joins
+### Explode
+
+if a column contains list of elements , it will create separate rows for each element
+
+```python
+df.withColumn('codingskills',explode(col('skills)))
+```
+
+### Map
+
+only for rdd objects
+
+```python
+map_data = [('vishwaranjan','kumar'),('Aniket','Yadav')]
+map_rdd = spark.sparkContext.parallelize(map_data)
+print(map_rdd.collect())
+rdd_map = map_rdd.map(lambda x: x + (x[0]+' '+x[1],))
+print(rdd_map.collect())
+```
+
+if we have dataframe
+
+```python
+new_df = spark.createDataFrame(map_data,['First_Name','Last_Name'])
+new_df.show()
+new_rdd = new_df.rdd.map(lambda x: x+(x[0]+' '+x[1],))
+changed_df = new_rdd.toDF(['First_Name','Last_Name','Full_Name'])
+changed_df.show()
+
+```
+
+### createOrReplaceTempView()
+
+creates a temporary table within the session ,if already created It will be replaced
+
+```python
+changed_df.createOrReplaceTempView('name')
+```
+
+### createOrReplaceGlobalTempView()
+
+It is used to create temp views or tables globally , when can be accessed across the sessions with in spark applications
+
+to query these table , we need append **global_temp.<table_name>**
+
+```python
+changed_df.createOrReplaceGlobalTempView('name')
+%sql
+SELECT * FROM global_temp.name;
+
+```
