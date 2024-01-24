@@ -305,3 +305,30 @@ changed_df.createOrReplaceGlobalTempView('name')
 SELECT * FROM global_temp.name;
 
 ```
+
+## RDD
+
+RDDs are fault-tolerant, immutable distributed collections of objects, which means once you create an RDD you cannot change it. Each dataset in RDD is divided into logical partitions, which can be computed on different nodes of the cluster.
+
+### RDD creation
+
+#### sparkContext.parallelize()
+
+sparkContext.parallelize is used to parallelize an existing collection in your driver program. This is a basic method to create RDD.
+
+```python
+data = [('Name','Age'),('Vishwa',23),('Aniket',23),('Ankita',20)]
+rdd = spark.sparkContext.parallelize(data)
+print(rdd.collect())
+columns = rdd.first()
+rdd = rdd.filter(lambda x : x!= columns)
+rdd.toDF(columns)
+```
+
+#### sparkContext.textFile()
+
+Using textFile() method we can read a text (.txt) file from many sources like HDFS, S#, Azure, local e.t.c into RDD.
+
+```python
+rdd = spark.sparkContext.textFile("/FileStore/tables/sales_csv.txt")
+```
