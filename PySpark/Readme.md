@@ -310,6 +310,45 @@ SELECT * FROM global_temp.name;
 
 RDDs are fault-tolerant, immutable distributed collections of objects, which means once you create an RDD you cannot change it. Each dataset in RDD is divided into logical partitions, which can be computed on different nodes of the cluster.
 
+### RDD Operations
+
+#### RDD Transformations
+
+[Spark RDD Transformations](https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-transformations/) are lazy operations meaning they don`t execute until you call an action on RDD. Since RDDs are immutable, When you run a transformation(for example map()), instead of updating a current RDD, it returns a new RDD.
+
+Some transformations on RDDs are `flatMap()`, `map()`, `reduceByKey()`, `filter()`, `sortByKey()` and all these return a new RDD instead of updating the current.
+
+1. Narrow
+2. Wide
+
+**Narrow** :- Narrow transformations are the result of [map()](https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-transformations/#rdd-map) and [filter()](https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-transformations/#rdd-filter) functions and these compute data that live on a single partition meaning there will not be any data movement between partitions to execute narrow transformations.Functions such as `map()`, `mapPartition()`, `flatMap()`, `filter()`, `union()` are some examples of narrow transformation
+
+---
+
+**Wide**:- Wide transformations are the result of *[groupByKey()](https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-transformations/#rdd-groupbykey)* and *[reduceByKey()](https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-transformations/#rdd-reducebykey)* functions and these compute data that live on many partitions meaning there will be data movements between partitions to execute wide transformations. Since these shuffles the data, they also called shuffle transformations.
+
+---
+
+Functions such as `groupByKey()`, `aggregateByKey()`, `aggregate()`, `join()`, `repartition()`,distinct() are some examples of a wide transformations.
+
+**Note:** When compared to Narrow transformations, wide transformations are expensive operations due to shuffling.
+
+Number of stages depend upon number of wide transformations
+
+***No. of stages = no. of wide transformations + 1***
+
+---
+
+#### RDD Actions
+
+[RDD Action operation](https://sparkbyexamples.com/apache-spark-rdd/spark-rdd-actions/) returns the values from an RDD to a driver node. In other words, any RDD function that returns non RDD[T] is considered as an action. RDD operations trigger the computation and return RDD in a List to the driver program.
+
+Some actions on RDDs are `count()`,  `collect()`,  `first()`,  `max()`,  `reduce()`  and more.
+
+***no. of jobs = no. of actions***
+
+***no. of tasks = no. of partitions***
+
 ### RDD creation
 
 #### sparkContext.parallelize()
@@ -332,3 +371,57 @@ Using textFile() method we can read a text (.txt) file from many sources like HD
 ```python
 rdd = spark.sparkContext.textFile("/FileStore/tables/sales_csv.txt")
 ```
+
+#### reduce()
+
+reduce is an action.output is a single value.
+
+#### reduceByKey()
+
+Spark RDD `reduceByKey()` transformation is used to merge the values of each key using an associative reduce function.  It is a wider transformation as it shuffles data across multiple partitions and **it operates on pair RDD (key/value pair).**
+
+```python
+closed_orders_rdd = test_rdd.filter(lambda x: x[3]=='closed')
+closed_orders_rdd = closed_orders_rdd.map(lambda x:(x[2],1))
+closed_orders = closed_orders_rdd.reduceByKey(lambda x,y:x+y)
+```
+
+#### countByValue
+
+Same as reduced by key but it is an action and not transformations. no further transformation operations can be done
+
+```python
+test_rdd.filter(lambda x:x[3]=='closed'). \
+    map(lambda x:(x[2])). \
+        countByValue()
+```
+
+#### reduceByKey() vs countByValue()
+
+| reduceByKey()                                                         | countByValue()                                                  |
+| --------------------------------------------------------------------- | --------------------------------------------------------------- |
+| returns an rdd which can be further<br />used in a distributed manner | return a map which can not be<br /> used in distributed manner. |
+| RDD Transformation                                                    | RDD action                                                      |
+
+#### Join
+
+#### repartition()
+
+change the number of partitions(either increase or decrease) . It will do complete reshuffling of data.partitions tends to have same amount of data
+
+increase -> for more parallelism
+
+decrease->  eg, in case of filter
+
+#### coalesce()
+
+It can only decrease the number of partitions.its intent is to avoid reshuffling. partitions can have uneven amount of data.
+
+| Repartition                                                        |                      Coalesce                      |
+| ------------------------------------------------------------------ | :------------------------------------------------: |
+| change the number of partitions<br />(either increase or decrease) | It can only decrease the<br />number of partitions |
+| It will do complete reshuffling of data                            |         its intent is to avoid reshuffling         |
+| partitions tends to have same<br /> amount of data                 |  partitions can have uneven<br />amount of data.  |
+| mainly used to increase partitions                                 |      used for decreasing number of parttions      |
+
+#### cache()
