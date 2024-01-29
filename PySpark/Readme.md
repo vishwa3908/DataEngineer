@@ -21,6 +21,12 @@ Header:
 
 If the csv file have a header (column names in the first row) then set header=true. This will use the first row in the csv file as the dataframe's column names. Setting header=false (default option) will result in a dataframe with default column names: _c0, _c1, _c2, etc.
 
+3 type of modes
+
+* failfast -> it will fail if there is any datatype mismatch. useful  when need to parse data in desired datatype
+* permissive (default) -> if spark is not able to parse it due to datatype mismatch  then make it as a null without impacting the other result.
+* dropmalformed -> whatever records have issues, it will drop those records.
+
 ```python
 df = spark.read.csv("",header=True)  
 df = spark.read.option('header','true').csv("")  
@@ -28,6 +34,8 @@ df = spark.read.format("csv").load("")
 ```
 
 ## Create Schema
+
+it is not preferred to use inferschema because spark needs to read the data and get the schema and it may be not correct always.
 
 ```python
 schema = StructType([
@@ -39,6 +47,22 @@ schema = StructType([
 )
 
 df = spark.read.format('csv').option('inferSchema','true').schema(schema).load("")
+```
+
+## Create DataFrame
+
+```python
+#method 1
+a = [(1,'vishwa'),(2,'Raja'),(3,'Mohan'),(4,'Sita')]
+coln = ['id','name']
+b = spark.createDataFrame(a).toDF(*coln)
+b.show()
+
+#method 2
+a = [(1,'vishwa'),(2,'Raja'),(3,'Mohan'),(4,'Sita')]
+coln = ['id','name']
+b = spark.createDataFrame(a,coln)
+b.show()
 ```
 
 ## Print Schema of df
@@ -61,6 +85,16 @@ df.show()
 df.columns
 ```
 
+## truncate()
+
+to show the whole row data and not ....
+
+set truncate=False
+
+```python
+df.show(truncate=False)
+```
+
 ## Selecting Coloumn
 
 #### Single Column
@@ -73,6 +107,15 @@ df.select("").show()
 
 ```python
 df.select(["",""]).show()
+```
+
+## Select Expr
+
+if we want to see some column after calculation
+
+```python
+df.select('*',expr("product_price * quantity as subtotal"))
+df.selectExpr('*',"product_price * quantity as subtotal")
 ```
 
 ## Adding New Column
@@ -106,6 +149,13 @@ df.drop('')
 df.drop('','')
 df.drop(col(''),'')
 df.drop(col(''),col(''))
+```
+
+## dropDuplicates
+
+```python
+df.dropDuplicates()
+df.dropDuplicates(['col1','col2'])
 ```
 
 ## Rename Columns
@@ -184,6 +234,12 @@ df = df.withColumn("FullName",concat_ws(" ",df.first_name,df.last_name))concat v
 ```
 
 Both CONCAT() and CONCAT_WS() functions are used to concatenate two or more strings but the basic difference between them is that CONCAT_WS() function can do the concatenation along with a separator between strings, whereas in CONCAT() function there is no concept of the separator. Other significance difference between them is that CONCAT()function returns NULL if any of the argument is NULL, whereas CONCAT_WS() function returns NULL if the separator is NULL.
+
+### filter
+
+```python
+df.filter('gender = M')
+```
 
 ### when & otherwise
 
@@ -291,6 +347,8 @@ creates a temporary table within the session ,if already created It will be repl
 
 ```python
 changed_df.createOrReplaceTempView('name')
+df = spark.sql('select * from name')
+df = spark.read.table('name')
 ```
 
 ### createOrReplaceGlobalTempView()
@@ -306,7 +364,27 @@ SELECT * FROM global_temp.name;
 
 ```
 
-## RDD
+## Cache and Persist
+
+we should cache  a dataframe which has to be reused multiple time
+
+we should not cache big dataframes because it will not fit in memory and hinder performance
+
+cache is lazy
+
+cache ->   rdd -> in memory (default)
+
+    dataframes -> in memory and disk (default)
+
+whatever can fit in memory will fit in memory and laters will be fit in disk
+
+**persist**
+
+storage level can be changed by setting optional parameters.
+
+
+
+# RDD
 
 RDDs are fault-tolerant, immutable distributed collections of objects, which means once you create an RDD you cannot change it. Each dataset in RDD is divided into logical partitions, which can be computed on different nodes of the cluster.
 
@@ -386,6 +464,12 @@ closed_orders_rdd = closed_orders_rdd.map(lambda x:(x[2],1))
 closed_orders = closed_orders_rdd.reduceByKey(lambda x,y:x+y)
 ```
 
+#### groupByKey()
+
+[https://sparkbyexamples.com/spark/spark-groupbykey-vs-reducebykey/](https://sparkbyexamples.com/spark/spark-groupbykey-vs-reducebykey/)
+
+[https://medium.com/@sujathamudadla1213/explain-the-difference-between-groupbykey-and-reducebykey-bf0171e985ac](https://medium.com/@sujathamudadla1213/explain-the-difference-between-groupbykey-and-reducebykey-bf0171e985ac)
+
 #### countByValue
 
 Same as reduced by key but it is an action and not transformations. no further transformation operations can be done
@@ -404,6 +488,16 @@ test_rdd.filter(lambda x:x[3]=='closed'). \
 | RDD Transformation                                                    | RDD action                                                      |
 
 #### Join
+
+costly operation because it requires lot of reshuffling
+
+#### broadcast
+
+only datasets can be broadcasted . To broadcast a rdd you need to add collect
+
+```python
+broadcasted_rdd = sc.broadcast(join1_rdd.collect())
+```
 
 #### repartition()
 
@@ -425,3 +519,17 @@ It can only decrease the number of partitions.its intent is to avoid reshuffling
 | mainly used to increase partitions                                 |      used for decreasing number of parttions      |
 
 #### cache()
+
+# SparkSQL
+
+managed table vs external table
+
+## Disadvantages of MapReduce()
+
+1. Hard to write the code
+2. confined to map and reduce
+3. write to disk
+
+spark is alternate of mapreduce
+
+**spark is general purpose in memory compute engine**

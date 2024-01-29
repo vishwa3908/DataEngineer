@@ -21,6 +21,7 @@ flights_data = [(1,'Flight1' , 'Delhi' , 'Hyderabad'),
 
 _schema = "cust_id int, flight_id string , origin string , destination string"
 
+
 */
 
 with temp1 as
@@ -85,10 +86,12 @@ combined_temp as
 select * from combined_temp;
 
 
+
 /*markdown
 
 ## Question 2
 how can you add one or multiple column before or after a specific column in mysql
+
 
 
 */
@@ -98,6 +101,7 @@ how can you add one or multiple column before or after a specific column in mysq
 -- ADD COLUMN new_column1 datatype1 AFTER existing_column1,
 -- ADD COLUMN new_column2 datatype2 AFTER existing_column2,
 -- ...;
+
 
 
 
@@ -132,6 +136,7 @@ select name from employee where lower(name) regexp '[aeiou]$';
 #### find names of employee whose name starts with vowel but not end with vowel
 
 
+
 */
 
 select name from employee where lower(name) regexp '^[aeiou].*[^aeiou]$';
@@ -164,11 +169,19 @@ select * from test_join;
 select * from test_join_1;
 
 
+
 select * from test_join t 
 inner join test_join_1 t1 
 on t.id=t1.id;
 select * from test_join_1 t 
 inner join test_join t1 
+on t.id=t1.id;
+
+select * from test_join t 
+left join test_join_1 t1 
+on t.id=t1.id;
+select * from test_join_1 t 
+right join test_join t1 
 on t.id=t1.id;
 
 
@@ -218,5 +231,4 @@ FROM
     cte
 GROUP BY
     department;
-
 
