@@ -165,6 +165,10 @@ Not an Inplace Operator
 ```python
 df.withColumnRenamed('old','new')
 ```
+```python
+df.withColumnsRenamed('old':'new')
+```
+
 
 ## Change Schema of Column
 
