@@ -6818,3 +6818,19 @@ File Path                                    PID    Runtime      # DAGs    # Err
 /opt/airflow/dags/practice.py                                         1           0  0.07s           2024-02-22T15:36:58
 ================================================================================
 [2024-02-22T15:37:26.624+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-02-27T15:51:28.212+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2024-02-27T15:51:28.214+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2024-02-27T15:51:28.215+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-02-27T15:51:28.216+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-02-27T15:51:28.230+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-02-27T15:51:35.659+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py                                  0           0  0.06s           2024-02-27T15:51:28
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.16s           2024-02-27T15:51:28
+/opt/airflow/dags/practice.py                                         1           0  0.13s           2024-02-27T15:51:28
+================================================================================
+[2024-02-27T15:51:53.420+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
