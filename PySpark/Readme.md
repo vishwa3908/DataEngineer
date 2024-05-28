@@ -641,3 +641,5 @@ managed table vs external table
 spark is alternate of mapreduce
 
 **spark is general purpose in memory compute engine**
+
+# PySpark Streaming
