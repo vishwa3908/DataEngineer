@@ -330,6 +330,10 @@ sales_df.groupBy(['CustomerId','ProductId','SourceOrder']).sum('ProductPrice').o
 
 combine
 
+```python
+test_1_collected_df = test_1_df.groupBy('Name').agg(collect_list('Skill').alias('Skills'))
+```
+
 ### collect_set
 
 ### Sort and orderBy
@@ -488,7 +492,54 @@ on disk data is always kept in serialized form and in memory data is kept in des
 
 while using the write methods always give path to folder not file
 
+
+## Memory Management
+
+executory memeory + overhead memory (outside of jvm) 
+
+overhead memory - VM related overheads
+
+reserved - spark engine 300 mb
+
+storage memory - cache,persist
+
+execution memory - shuffle, sort, join, aggregation
+
+user memory - rdd related operations, udf
+
+## File Formats
+
+row based -> 
+
+* easy to write , faster writes
+* difficult to read subset of columns
+* less compression
+
+column based
+
+* easy to read, faster read
+* slower writes
+* very good compression
+* all datatypes are together
+
+csv - storage(more space)
+
+    processing (slow and takes more time)
+
+    I/O ( lot of I/O is involved and takes more time)
+
+xml/Json -  bad than csv , more bulky
+
+avro -  row based
+
+orc/parquet -  
+
+* column based
+* not efficient for writing, efficient for reading,storage
+* orc best fit with hive, parquet with spark
+
 # RDD
+
 
 RDDs are fault-tolerant, immutable distributed collections of objects, which means once you create an RDD you cannot change it. Each dataset in RDD is divided into logical partitions, which can be computed on different nodes of the cluster.
 
@@ -599,7 +650,13 @@ test_rdd.filter(lambda x:x[3]=='closed'). \
 
 costly operation because it requires lot of reshuffling
 
-#### broadcast
+1. Broadcast Hash Join
+2. shuffle hash join
+3. shuffle sort merge join
+4. cartesian join
+
+
+####  broadcast
 
 only datasets can be broadcasted . To broadcast a rdd you need to add collect
 
