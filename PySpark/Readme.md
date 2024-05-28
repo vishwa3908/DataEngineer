@@ -1,6 +1,6 @@
-# PySpark
+# PySpa
 
-A Project to practice all pyspark functionalities
+A Project to practice all pyspark functionalities and tranformations
 
 ## Authors
 
@@ -33,6 +33,8 @@ df = spark.read.option('header','true').csv("")
 df = spark.read.format("csv").load("")
 ```
 
+## Working With Json Files
+
 ## Create Schema
 
 it is not preferred to use inferschema because spark needs to read the data and get the schema and it may be not correct always.
@@ -47,6 +49,35 @@ schema = StructType([
 )
 
 df = spark.read.format('csv').option('inferSchema','true').schema(schema).load("")
+```
+
+Nested Schema
+
+```python
+##create nested schema 
+data = [
+        (("James",None,"Smith"),"OH","M"),
+        (("Anna","Rose",""),"NY","F"),
+        (("Julia","","Williams"),"OH","F"),
+        (("Maria","Anne","Jones"),"NY","M"),
+        (("Jen","Mary","Brown"),"NY","M"),
+        (("Mike","Mary","Williams"),"OH","M")
+        ]
+schema = StructType([
+    StructField('Name',
+                StructType([
+                    StructField('First_Name',StringType(),True),
+                    StructField('Middle_Name',StringType(),True),
+                    StructField('Last_Name',StringType(),True)
+                            ]),True),
+    StructField('State',StringType(),True),
+    StructField('Gender',StringType(),True)
+])
+
+df = spark.createDataFrame(data,schema)
+df.show(5)
+df.select(col('name.First_Name'),col('name.Last_Name'),col('Gender')).show()
+
 ```
 
 ## Create DataFrame
@@ -165,10 +196,10 @@ Not an Inplace Operator
 ```python
 df.withColumnRenamed('old','new')
 ```
+
 ```python
 df.withColumnsRenamed('old':'new')
 ```
-
 
 ## Change Schema of Column
 
@@ -223,6 +254,10 @@ df.withColumn('tp',tl(df.s,df.b))
 
     @udf(return)
 
+```python
+@udf(StringType())
+```
+
 ## Transformation
 
 ### concat
@@ -243,6 +278,9 @@ Both CONCAT() and CONCAT_WS() functions are used to concatenate two or more stri
 
 ```python
 df.filter('gender = M')
+skill_df.filter(col('Score')>4).show()
+skill_df.filter('Score=4').show()
+
 ```
 
 ### when & otherwise
@@ -288,12 +326,37 @@ df.groupBy("department").sum("salary").show(truncate=False)
 sales_df.groupBy(['CustomerId','ProductId','SourceOrder']).sum('ProductPrice').orderBy('CustomerId').show()
 ```
 
+### collect_list
+
+combine
+
+### collect_set
+
 ### Sort and orderBy
 
 ```python
 df.sort("column1", "column2", ascending=[True, False]) 
 df.orderBy(col("department"),col("state")).show(truncate=False)
 df.sort(col("department").asc(),col("state").asc()).show(truncate=False)
+```
+
+### Window Functions
+
+1. Lead()
+2. Lag()
+3. Row_number()
+4. rank()
+5. dense_rank()
+
+### Pivot
+
+```python
+runs_df = match_run_df.groupBy(col('Stadium')).pivot('Player_Name').agg(sum(col('Runs')))
+```
+
+```python
+spark.sql('''SELECT Nationality,Team from all_players''').groupBy('Nationality').pivot('Team').count().show()
+spark.sql('''SELECT Nationality,Team from all_players''').groupBy('Team').pivot('Nationality').count().show()
 ```
 
 ### Union vs UnionByName
@@ -386,11 +449,52 @@ whatever can fit in memory will fit in memory and laters will be fit in disk
 
 storage level can be changed by setting optional parameters.
 
+df.persist(5 parameters)
 
+1. disk
+2. memory
+3. off heap
+4. deserialized
+5. number of replicas
+
+   df.persist(True,True,False,True,1)
+
+   df.unpersist()
+
+   ```python
+   from pyspark.storagelevel import StorageLevel
+   top_buys_players_df.persist(StorageLevel.DISK_ONLY)
+   unsold_players_df.persist(StorageLevel.DISK_ONLY_2)
+   ```
+
+## Serialized and de-serialized
+
+serialized -> binary format which will be more optimized in term of space(take less space to store)),takes extra cpu cycles for the format conversion
+
+de-serialized -> keeping it in object format, take  slightly more space but in terms of compute this is fast.
+
+on disk data is always kept in serialized form and in memory data is kept in deserialized from
+
+## Dataframe Write
+
+4 different modes while writing
+
+1. overwrite
+2. ignore
+3. append
+4. errorIfExists
+
+### PartitionBy
+
+while using the write methods always give path to folder not file
 
 # RDD
 
 RDDs are fault-tolerant, immutable distributed collections of objects, which means once you create an RDD you cannot change it. Each dataset in RDD is divided into logical partitions, which can be computed on different nodes of the cluster.
+
+**Lineage Graph:**
+
+* RDDs keep track of the sequence of transformations that were applied to their base dataset. This sequence of transformations is known as the lineage graph. If a partition of an RDD is lost due to a node failure, Spark can use the lineage graph to recompute the lost partition based on the transformations applied to the original data
 
 ### RDD Operations
 
@@ -537,3 +641,5 @@ managed table vs external table
 spark is alternate of mapreduce
 
 **spark is general purpose in memory compute engine**
+
+# PySpark Streaming
