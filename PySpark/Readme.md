@@ -1,4 +1,4 @@
-# PySpa
+# PySpark
 
 A Project to practice all pyspark functionalities and tranformations
 
@@ -335,6 +335,18 @@ test_1_collected_df = test_1_df.groupBy('Name').agg(collect_list('Skill').alias(
 ```
 
 ### collect_set
+
+```python
+new_schema = StructType([
+    StructField('Name',StringType(),True),
+    StructField('Skills',StringType(),True)
+])
+data = [('vk','python'),('vk','sql'),('sam','python'),('sam','dsa'),('vk','sql')]
+new_df = spark.createDataFrame(data,new_schema)
+new_df.show()
+new_df.groupBy(col('Name')).agg(collect_list(col('Skills')).alias('Skills')).show()
+new_df.groupBy(col('Name')).agg(collect_set(col('Skills')).alias('Skills')).show()
+```
 
 ### Sort and orderBy
 
