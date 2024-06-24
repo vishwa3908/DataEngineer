@@ -20,6 +20,11 @@ insert into hospital values ('5', 'out', '2019-12-22 09:40:00');
 select * from hospital;
 
 
-with cte as (select *,case when action = 'out' then 0
-when action = 'in' then 1 end as total ,row_number() over(partition by emp_id order by time desc) as rnk from hospital)
-select * from cte where rnk=1 and total =1;
+-- with cte as (select *,case when action = 'out' then 0
+-- when action = 'in' then 1 end as total ,row_number() over(partition by emp_id order by time desc) as rnk from hospital)
+-- select * from cte where rnk=1 and total =1;
+
+with cte as (select *,case when action='in' then 1
+when action = 'out' then 0 end  as total
+,row_number() over(partition by emp_id order by time desc)as rnk from hospital)
+select * from cte where total =1 and rnk=1;
