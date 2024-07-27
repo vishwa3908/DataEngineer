@@ -235,17 +235,17 @@ Example Scenarios
    ETL Scenario
       Scenario: A retail company needs to generate daily sales reports by consolidating data from various transactional systems.
 
-      Implementation:
+    Implementation:
 
-      Extract sales data from transactional databases.
+    Extract sales data from transactional databases.
       Transform data to aggregate sales by product, region, and time period.
       Load the transformed data into a data warehouse for reporting.
    ELT Scenario
       Scenario: A tech company collects large amounts of log data from various applications and needs to perform ad-hoc analyses.
 
-      Implementation:
+    Implementation:
 
-      Extract log data from application servers.
+    Extract log data from application servers.
       Load raw log data into a cloud data warehouse like BigQuery.
       Transform and analyze data directly within BigQuery to identify trends and issues.
       Choosing Between ETL and ELT
@@ -253,8 +253,10 @@ Example Scenarios
       Use ELT when working with large datasets, using modern cloud data warehouses, needing flexibility for ad-hoc analyses, or aiming for real-time data processing.
       The choice between ETL and ELT depends on your specific data processing needs, the tools and systems you are using, and your performance and scalability requirements.
 
+# Dynamic Partition Pruning
 
+# Data Governance
 
+# Unity Catalog
 
-
-
+# Substring
