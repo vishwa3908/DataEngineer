@@ -33,6 +33,16 @@ df = spark.read.option('header','true').csv("")
 df = spark.read.format("csv").load("")
 ```
 
+```python
+# Read the CSV file into a DataFrame with options to handle commas within values
+df = spark.read.option("header", "true") \
+               .option("quote", '"') \
+               .option("escape", '"') \
+               .option("multiLine", "true") \
+               .csv(csv_file_path)
+
+```
+
 ## Working With Json Files
 
 ## Create Schema
@@ -504,10 +514,9 @@ on disk data is always kept in serialized form and in memory data is kept in des
 
 while using the write methods always give path to folder not file
 
-
 ## Memory Management
 
-executory memeory + overhead memory (outside of jvm) 
+executory memeory + overhead memory (outside of jvm)
 
 overhead memory - VM related overheads
 
@@ -521,7 +530,7 @@ user memory - rdd related operations, udf
 
 ## File Formats
 
-row based -> 
+row based ->
 
 * easy to write , faster writes
 * difficult to read subset of columns
@@ -544,14 +553,13 @@ xml/Json -  bad than csv , more bulky
 
 avro -  row based
 
-orc/parquet -  
+orc/parquet -
 
 * column based
 * not efficient for writing, efficient for reading,storage
 * orc best fit with hive, parquet with spark
 
 # RDD
-
 
 RDDs are fault-tolerant, immutable distributed collections of objects, which means once you create an RDD you cannot change it. Each dataset in RDD is divided into logical partitions, which can be computed on different nodes of the cluster.
 
@@ -625,6 +633,23 @@ rdd = spark.sparkContext.textFile("/FileStore/tables/sales_csv.txt")
 
 reduce is an action.output is a single value.
 
+The reduce operation is used to aggregate elements of an RDD (Resilient Distributed Dataset) using a specified commutative and associative binary operator. It takes a function as an argument, which specifies how two elements of the RDD are combined to produce a single element. This function is repeatedly applied to pairs of elements until a single result is obtained.
+
+```python
+from pyspark import SparkContext
+
+sc = SparkContext("local", "Reduce Example")
+
+# Create an RDD
+rdd = sc.parallelize([1, 2, 3, 4, 5])
+
+# Use reduce to sum all elements
+sum_result = rdd.reduce(lambda a, b: a + b)
+
+print(f"Sum of elements: {sum_result}")
+```
+
+
 #### reduceByKey()
 
 Spark RDD `reduceByKey()` transformation is used to merge the values of each key using an associative reduce function.  It is a wider transformation as it shuffles data across multiple partitions and **it operates on pair RDD (key/value pair).**
@@ -634,6 +659,35 @@ closed_orders_rdd = test_rdd.filter(lambda x: x[3]=='closed')
 closed_orders_rdd = closed_orders_rdd.map(lambda x:(x[2],1))
 closed_orders = closed_orders_rdd.reduceByKey(lambda x,y:x+y)
 ```
+
+#### Key Differences between reduce vs reduce by key 
+
+
+Key Differences
+
+    1.  Context:
+
+    •   reduce is used for aggregating all elements of an RDD.
+
+    •   reduceByKey is used for aggregating values of key-value pairs by key.
+
+    2.  Input Type:
+
+    •   reduce works on a regular RDD of any type.
+
+    •   reduceByKey works on an RDD of key-value pairs.
+
+    3.  Output:
+
+    •   reduce returns a single aggregated result.
+
+    •   reduceByKey returns an RDD of key-value pairs where each key is unique and the value is the result of aggregating values for that key.
+
+    4.  Computation:
+
+    •   reduce operates on the entire dataset as a whole.
+
+    •   reduceByKey operates on subsets of the dataset (grouped by key) and performs a distributed aggregation.
 
 #### groupByKey()
 
@@ -667,8 +721,7 @@ costly operation because it requires lot of reshuffling
 3. shuffle sort merge join
 4. cartesian join
 
-
-####  broadcast
+#### broadcast
 
 only datasets can be broadcasted . To broadcast a rdd you need to add collect
 

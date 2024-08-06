@@ -259,4 +259,79 @@ Example Scenarios
 
 # Unity Catalog
 
+unified governance solution for all data and AI assets in Databricks. It provides centralized governance for data, including user and data permissions management, discovery, and data lineage.
+
+
+
 # Substring
+
+# Databricks Autoloader
+
+Databricks Autoloader is a feature that allows you to automatically load data from cloud storage into
+Databricks. It provides a simple and efficient way to load data into Databricks, reducing
+the need for manual data loading and processing.
+
+Key Features of Databricks Auto Loader
+
+**Incremental Processing:**
+
+    Auto Loader incrementally processes new files as they arrive in the storage system, reducing the need for manual intervention and ensuring that only new data is processed.
+
+**Schema Evolution:**
+         It can automatically infer and handle schema changes, such as adding new columns to your data files without requiring manual schema updates.
+
+**File Notification Systems:**
+       Auto Loader can use file notification services like AWS SNS/SQS or Azure Event Grid to receive notifications about new files, which can help reduce the latency of data ingestion.
+
+**Scalability:**
+         It is designed to scale with the volume of incoming data, making it suitable for large-scale data ingestion tasks.
+
+**Fault Tolerance:**
+         Auto Loader is resilient to failures and can retry processing if errors occur, ensuring reliable data ingestion.
+
+**Efficient File Management:**
+         It keeps track of processed files and avoids reprocessing them, improving efficiency and reducing unnecessary compute costs.
+
+```python
+# Import necessary libraries
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+from pyspark.sql import SparkSession
+
+# Initialize Spark session (This is typically done for you in a Databricks notebook)
+spark = SparkSession.builder.appName("AutoLoaderExample").getOrCreate()
+
+# Define input and output paths
+input_path = "s3a://your-bucket/path/to/files/"
+output_path = "/mnt/delta/processed_data"
+checkpoint_path = "/mnt/delta/checkpoints/processed_data"
+schema_location = "/mnt/delta/schema_location"
+
+
+# Define the schema of the input data
+schema = StructType([
+    StructField("id", IntegerType(), True),
+    StructField("name", StringType(), True),
+    StructField("age", IntegerType(), True)
+])
+aws_access_key_id = ""
+aws_secret_access_key = ""
+spark._jsc.hadoopConfiguration().set("fs.s3a.access.key", aws_access_key_id)
+spark._jsc.hadoopConfiguration().set("fs.s3a.secret.key", aws_secret_access_key)
+spark._jsc.hadoopConfiguration().set("fs.s3a.endpoint", "s3.amazonaws.com") 
+# Read data using Auto Loader
+df = (spark.readStream
+      .format("cloudFiles")
+      .option("cloudFiles.format", "csv")  # Specify the format of the input files
+      .option("cloudFiles.schemaLocation", schema_location)
+      .load(input_path))  # Load data from the input path
+
+# Transform the data (e.g., filter, select specific columns)
+processed_df = df.select("id", "name", "age").filter(df["age"] > 18)
+
+# Write data to a Delta table with checkpointing
+(processed_df.writeStream
+    .format("delta")
+    .option("checkpointLocation", checkpoint_path)  # Specify the checkpoint location
+    .outputMode("append")  # Append mode is typically used for streaming
+    .start(output_path))  # Start the streaming query
+```
