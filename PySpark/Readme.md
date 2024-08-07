@@ -44,6 +44,15 @@ df = spark.read.option("header", "true") \
 ```
 
 ## Working With Json Files
+```python
+json_df = spark.read.option("multiline", "true").schema(schema).json("/FileStore/tables/sample_test.json")
+display(json_df)
+exploded_df = json_df.withColumn('students',explode(col('students')))
+display(exploded_df)
+exploded_df.select(col('students.name')).show()
+
+```
+
 
 ## Create Schema
 
@@ -649,7 +658,6 @@ sum_result = rdd.reduce(lambda a, b: a + b)
 print(f"Sum of elements: {sum_result}")
 ```
 
-
 #### reduceByKey()
 
 Spark RDD `reduceByKey()` transformation is used to merge the values of each key using an associative reduce function.  It is a wider transformation as it shuffles data across multiple partitions and **it operates on pair RDD (key/value pair).**
@@ -660,8 +668,7 @@ closed_orders_rdd = closed_orders_rdd.map(lambda x:(x[2],1))
 closed_orders = closed_orders_rdd.reduceByKey(lambda x,y:x+y)
 ```
 
-#### Key Differences between reduce vs reduce by key 
-
+#### Key Differences between reduce vs reduce by key
 
 Key Differences
 
