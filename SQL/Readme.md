@@ -92,3 +92,35 @@ Select *,dense_rank() over(partition by order by salary) as rn from company;
 | Hr         | 16000 | 2  |
 | Operations | 10000 | 1  |
 | Developer  | 10000 | 1  |
+
+
+## 4. Lag
+
+This window function is used to fetch the previous row records
+
+```sql
+
+Select *,lag(salary) over(order by salary) as prev from company;
+```
+
+| Department | Salary | prev |
+| ---------- | :----: | -- |
+| Hr         | 10000 | Null |
+| Operations | 10000 | 10000 |
+| Developer  | 10000 | 10000  |
+| Hr         | 16000 | 10000  |
+
+```sql
+Select *,lag(salary) over(partition by department order by salary)as prev from company;
+```
+
+
+| Department | Salary | prev |
+| ---------- | :----: | -- |
+| Hr         | 10000 | Null  |
+| Hr         | 16000 | 10000  |
+| Operations | 10000 | Null  |
+| Developer  | 10000 | Null  |
+
+## 5. Lead
+
