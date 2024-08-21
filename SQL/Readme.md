@@ -10,7 +10,7 @@
 
 Gives  Number to each row, no number will repeat regardless of same or different values
 
-Suppose we have one Company table :- 
+Suppose we have one Company table :-
 
 | Department | Salary |
 | ---------- | :----: |
@@ -22,3 +22,73 @@ Suppose we have one Company table :-
 ```sql
 Select *,row_number() over(order by salary) as rn from company;
 ```
+
+| Department | Salary | rn |
+| ---------- | :----: | -- |
+| Hr         | 10000 | 1  |
+| Hr         | 16000 | 2  |
+| Operations | 10000 | 3  |
+| Developer  | 10000 | 4  |
+
+```sql
+Select *,row_number() over(partition by deoartment order by salary) as rn from company;
+```
+
+| Department | Salary | rn |
+| ---------- | :----: | -- |
+| Hr         | 10000 | 1  |
+| Hr         | 16000 | 2  |
+| Operations | 10000 | 1  |
+| Developer  | 10000 | 1  |
+
+## 2. Rank
+
+Gives Rank to Each Row and will Skip ranks if encounters any same value
+
+```sql
+Select *,rank() over(order by salary) as rn from company;
+```
+
+| Department | Salary | rn |
+| ---------- | :----: | -- |
+| Hr         | 10000 | 1  |
+| Operations | 10000 | 1  |
+| Developer  | 10000 | 1  |
+| Hr         | 16000 | 4  |
+
+```sql
+Select *,rank() over(partition by order by salary) as rn from company;
+```
+
+| Department | Salary | rn |
+| ---------- | :----: | -- |
+| Hr         | 10000 | 1  |
+| Hr         | 16000 | 2  |
+| Operations | 10000 | 1  |
+| Developer  | 10000 | 1  |
+
+## 3. Dense Rank
+
+Gives Rank to each row based on condition by doesn`t skip any rank
+
+```sql
+Select *,dense_rank() over(order by salary) as rn from company;
+```
+
+| Department | Salary | rn |
+| ---------- | :----: | -- |
+| Hr         | 10000 | 1  |
+| Operations | 10000 | 1  |
+| Developer  | 10000 | 1  |
+| Hr         | 16000 | 2  |
+
+```sql
+Select *,dense_rank() over(partition by order by salary) as rn from company;
+```
+
+| Department | Salary | rn |
+| ---------- | :----: | -- |
+| Hr         | 10000 | 1  |
+| Hr         | 16000 | 2  |
+| Operations | 10000 | 1  |
+| Developer  | 10000 | 1  |
