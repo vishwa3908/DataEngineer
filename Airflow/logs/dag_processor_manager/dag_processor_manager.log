@@ -14212,3 +14212,1078 @@ File Path                                    PID    Runtime      # DAGs    # Err
 /opt/airflow/dags/practice.py                                         1           0  0.07s           2024-03-19T05:51:42
 ================================================================================
 [2024-03-19T05:51:57.451+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-09-09T14:26:52.965+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2024-09-09T14:26:52.966+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2024-09-09T14:26:52.966+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-09-09T14:26:52.966+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T14:26:52.973+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T14:26:53.046+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/simples3bucketpipeline.py    172  0.04s             0           0
+/opt/airflow/dags/practice.py                                         0           0
+/opt/airflow/dags/simple_pipeline.py           175  0.03s             0           0
+================================================================================
+[2024-09-09T14:27:23.327+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           194  0.01s             0           0  0.04s           2024-09-09T14:26:53
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.31s           2024-09-09T14:26:53
+/opt/airflow/dags/practice.py                                         1           0  0.25s           2024-09-09T14:26:53
+================================================================================
+[2024-09-09T14:27:53.760+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           219  0.00s             0           0  0.04s           2024-09-09T14:27:23
+/opt/airflow/dags/simples3bucketpipeline.py    216  0.02s             1           0  0.08s           2024-09-09T14:27:23
+/opt/airflow/dags/practice.py                                         1           0  0.08s           2024-09-09T14:27:23
+================================================================================
+[2024-09-09T14:28:24.148+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           259  0.01s             0           0  0.04s           2024-09-09T14:27:53
+/opt/airflow/dags/simples3bucketpipeline.py    256  0.02s             1           0  0.10s           2024-09-09T14:27:53
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:27:53
+================================================================================
+[2024-09-09T14:28:54.526+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           280  0.00s             0           0  0.04s           2024-09-09T14:28:24
+/opt/airflow/dags/simples3bucketpipeline.py    277  0.01s             1           0  0.10s           2024-09-09T14:28:24
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:28:24
+================================================================================
+[2024-09-09T14:29:24.932+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           301  0.01s             0           0  0.04s           2024-09-09T14:28:54
+/opt/airflow/dags/simples3bucketpipeline.py    298  0.02s             1           0  0.09s           2024-09-09T14:28:54
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:28:54
+================================================================================
+[2024-09-09T14:29:55.295+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           323  0.00s             0           0  0.04s           2024-09-09T14:29:24
+/opt/airflow/dags/simples3bucketpipeline.py    320  0.01s             1           0  0.09s           2024-09-09T14:29:24
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:29:25
+================================================================================
+[2024-09-09T14:30:25.690+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           345  0.00s             0           0  0.04s           2024-09-09T14:29:55
+/opt/airflow/dags/simples3bucketpipeline.py    342  0.02s             1           0  0.08s           2024-09-09T14:29:55
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:29:55
+================================================================================
+[2024-09-09T14:30:56.070+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           367  0.01s             0           0  0.04s           2024-09-09T14:30:25
+/opt/airflow/dags/simples3bucketpipeline.py    364  0.02s             1           0  0.10s           2024-09-09T14:30:25
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:30:25
+================================================================================
+[2024-09-09T14:31:26.438+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           389  0.00s             0           0  0.05s           2024-09-09T14:30:56
+/opt/airflow/dags/simples3bucketpipeline.py    386  0.01s             1           0  0.11s           2024-09-09T14:30:56
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:30:56
+================================================================================
+[2024-09-09T14:31:53.735+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T14:31:53.746+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T14:31:56.824+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           411  0.01s             0           0  0.04s           2024-09-09T14:31:26
+/opt/airflow/dags/simples3bucketpipeline.py    408  0.02s             1           0  0.09s           2024-09-09T14:31:26
+/opt/airflow/dags/practice.py                                         1           0  0.08s           2024-09-09T14:31:26
+================================================================================
+[2024-09-09T14:32:27.244+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           432  0.00s             0           0  0.04s           2024-09-09T14:31:56
+/opt/airflow/dags/simples3bucketpipeline.py    429  0.02s             1           0  0.10s           2024-09-09T14:31:56
+/opt/airflow/dags/practice.py                                         1           0  0.08s           2024-09-09T14:31:56
+================================================================================
+[2024-09-09T14:32:57.619+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           454  0.00s             0           0  0.04s           2024-09-09T14:32:27
+/opt/airflow/dags/simples3bucketpipeline.py    451  0.01s             1           0  0.10s           2024-09-09T14:32:27
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:32:27
+================================================================================
+[2024-09-09T14:33:28.024+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           494  0.01s             0           0  0.04s           2024-09-09T14:32:57
+/opt/airflow/dags/simples3bucketpipeline.py    491  0.02s             1           0  0.09s           2024-09-09T14:32:57
+/opt/airflow/dags/practice.py                                         1           0  0.08s           2024-09-09T14:32:57
+================================================================================
+[2024-09-09T14:33:58.401+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           516  0.00s             0           0  0.04s           2024-09-09T14:33:28
+/opt/airflow/dags/simples3bucketpipeline.py    513  0.01s             1           0  0.09s           2024-09-09T14:33:28
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:33:28
+================================================================================
+[2024-09-09T14:34:28.804+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           538  0.01s             0           0  0.03s           2024-09-09T14:33:58
+/opt/airflow/dags/simples3bucketpipeline.py    535  0.02s             1           0  0.07s           2024-09-09T14:33:58
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:33:58
+================================================================================
+[2024-09-09T14:34:59.291+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           560  0.01s             0           0  0.04s           2024-09-09T14:34:28
+/opt/airflow/dags/simples3bucketpipeline.py    557  0.02s             1           0  0.09s           2024-09-09T14:34:28
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:34:28
+================================================================================
+[2024-09-09T14:35:29.732+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           581  0.01s             0           0  0.04s           2024-09-09T14:34:59
+/opt/airflow/dags/simples3bucketpipeline.py    578  0.02s             1           0  0.09s           2024-09-09T14:34:59
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:34:59
+================================================================================
+[2024-09-09T14:36:00.152+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           603  0.00s             0           0  0.04s           2024-09-09T14:35:29
+/opt/airflow/dags/simples3bucketpipeline.py    600  0.02s             1           0  0.09s           2024-09-09T14:35:29
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:35:29
+================================================================================
+[2024-09-09T14:36:30.588+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           625  0.01s             0           0  0.04s           2024-09-09T14:36:00
+/opt/airflow/dags/simples3bucketpipeline.py    622  0.02s             1           0  0.09s           2024-09-09T14:36:00
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:36:00
+================================================================================
+[2024-09-09T14:36:53.918+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T14:36:53.932+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T14:37:01.064+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           647  0.00s             0           0  0.04s           2024-09-09T14:36:30
+/opt/airflow/dags/simples3bucketpipeline.py    644  0.01s             1           0  0.09s           2024-09-09T14:36:30
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:36:30
+================================================================================
+[2024-09-09T14:37:31.525+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           669  0.00s             0           0  0.04s           2024-09-09T14:37:01
+/opt/airflow/dags/simples3bucketpipeline.py    666  0.01s             1           0  0.08s           2024-09-09T14:37:01
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:37:01
+================================================================================
+[2024-09-09T14:38:01.972+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           691  0.00s             0           0  0.03s           2024-09-09T14:37:31
+/opt/airflow/dags/simples3bucketpipeline.py    688  0.02s             1           0  0.09s           2024-09-09T14:37:31
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T14:37:31
+================================================================================
+[2024-09-09T14:38:20.824+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-09-09T16:43:05.716+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2024-09-09T16:43:05.718+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2024-09-09T16:43:05.719+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-09-09T16:43:05.720+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T16:43:05.733+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T16:43:05.861+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/simples3bucketpipeline.py    171  0.06s             0           0
+/opt/airflow/dags/practice.py                                         0           0
+/opt/airflow/dags/simple_pipeline.py           175  0.05s             0           0
+================================================================================
+[2024-09-09T16:43:36.357+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           196  0.00s             0           0  0.06s           2024-09-09T16:43:05
+/opt/airflow/dags/simples3bucketpipeline.py    193  0.02s             1           0  0.24s           2024-09-09T16:43:06
+/opt/airflow/dags/practice.py                                         1           0  0.20s           2024-09-09T16:43:06
+================================================================================
+[2024-09-09T16:44:06.799+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           218  0.01s             0           0  0.04s           2024-09-09T16:43:36
+/opt/airflow/dags/simples3bucketpipeline.py    215  0.02s             1           0  0.11s           2024-09-09T16:43:36
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T16:43:36
+================================================================================
+[2024-09-09T16:44:37.224+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           240  0.01s             0           0  0.05s           2024-09-09T16:44:06
+/opt/airflow/dags/simples3bucketpipeline.py    237  0.02s             1           0  0.10s           2024-09-09T16:44:06
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T16:44:06
+================================================================================
+[2024-09-09T16:45:07.685+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           262  0.00s             0           0  0.05s           2024-09-09T16:44:37
+/opt/airflow/dags/simples3bucketpipeline.py    259  0.02s             1           0  0.12s           2024-09-09T16:44:37
+/opt/airflow/dags/practice.py                                         1           0  0.09s           2024-09-09T16:44:37
+================================================================================
+[2024-09-09T16:45:38.067+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           293  0.00s             0           0  0.04s           2024-09-09T16:45:07
+/opt/airflow/dags/simples3bucketpipeline.py    290  0.02s             1           0  0.12s           2024-09-09T16:45:07
+/opt/airflow/dags/practice.py                                         1           0  0.09s           2024-09-09T16:45:07
+================================================================================
+[2024-09-09T16:46:08.479+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           314  0.00s             0           0  0.04s           2024-09-09T16:45:38
+/opt/airflow/dags/simples3bucketpipeline.py    312  0.02s             1           0  0.10s           2024-09-09T16:45:38
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T16:45:38
+================================================================================
+[2024-09-09T16:46:38.880+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           337  0.00s             0           0  0.03s           2024-09-09T16:46:08
+/opt/airflow/dags/simples3bucketpipeline.py    334  0.02s             1           0  0.11s           2024-09-09T16:46:08
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T16:46:08
+================================================================================
+[2024-09-09T16:46:59.880+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-09-09T17:15:10.703+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2024-09-09T17:15:10.704+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2024-09-09T17:15:10.704+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-09-09T17:15:10.704+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T17:15:10.712+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T17:15:10.806+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/simples3bucketpipeline.py    170  0.06s             0           0
+/opt/airflow/dags/practice.py                                         0           0
+/opt/airflow/dags/simple_pipeline.py           173  0.05s             0           0
+================================================================================
+[2024-09-09T17:15:41.320+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           204  0.00s             0           0  0.07s           2024-09-09T17:15:10
+/opt/airflow/dags/simples3bucketpipeline.py    202  0.01s             1           0  0.23s           2024-09-09T17:15:10
+/opt/airflow/dags/practice.py                                         1           0  0.19s           2024-09-09T17:15:11
+================================================================================
+[2024-09-09T17:16:11.822+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           227  0.00s             0           0  0.06s           2024-09-09T17:15:41
+/opt/airflow/dags/simples3bucketpipeline.py    224  0.02s             1           0  0.16s           2024-09-09T17:15:41
+/opt/airflow/dags/practice.py                                         1           0  0.12s           2024-09-09T17:15:41
+================================================================================
+[2024-09-09T17:16:42.269+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           248  0.01s             0           0  0.04s           2024-09-09T17:16:11
+/opt/airflow/dags/simples3bucketpipeline.py    245  0.02s             1           0  0.12s           2024-09-09T17:16:11
+/opt/airflow/dags/practice.py                                         1           0  0.08s           2024-09-09T17:16:11
+================================================================================
+[2024-09-09T17:17:12.740+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           270  0.01s             0           0  0.05s           2024-09-09T17:16:42
+/opt/airflow/dags/simples3bucketpipeline.py    267  0.02s             1           0  0.12s           2024-09-09T17:16:42
+/opt/airflow/dags/practice.py                                         1           0  0.08s           2024-09-09T17:16:42
+================================================================================
+[2024-09-09T17:17:43.186+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           292  0.00s             0           0  0.04s           2024-09-09T17:17:12
+/opt/airflow/dags/simples3bucketpipeline.py    289  0.02s             1           0  0.09s           2024-09-09T17:17:12
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T17:17:12
+================================================================================
+[2024-09-09T17:18:13.650+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           314  0.00s             0           0  0.04s           2024-09-09T17:17:43
+/opt/airflow/dags/simples3bucketpipeline.py    311  0.02s             1           0  0.11s           2024-09-09T17:17:43
+/opt/airflow/dags/practice.py                                         1           0  0.08s           2024-09-09T17:17:43
+================================================================================
+[2024-09-09T17:18:44.040+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           336  0.00s             0           0  0.04s           2024-09-09T17:18:13
+/opt/airflow/dags/simples3bucketpipeline.py    333  0.01s             1           0  0.10s           2024-09-09T17:18:13
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T17:18:13
+================================================================================
+[2024-09-09T17:19:14.435+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           358  0.00s             0           0  0.04s           2024-09-09T17:18:44
+/opt/airflow/dags/simples3bucketpipeline.py    355  0.02s             1           0  0.08s           2024-09-09T17:18:44
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T17:18:44
+================================================================================
+[2024-09-09T17:19:44.868+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           380  0.01s             0           0  0.04s           2024-09-09T17:19:14
+/opt/airflow/dags/simples3bucketpipeline.py    377  0.02s             1           0  0.11s           2024-09-09T17:19:14
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T17:19:14
+================================================================================
+[2024-09-09T17:20:11.222+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T17:20:11.243+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T17:20:15.322+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           402  0.00s             0           0  0.04s           2024-09-09T17:19:44
+/opt/airflow/dags/simples3bucketpipeline.py    399  0.02s             1           0  0.09s           2024-09-09T17:19:44
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T17:19:44
+================================================================================
+[2024-09-09T17:20:45.795+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           424  0.00s             0           0  0.04s           2024-09-09T17:20:15
+/opt/airflow/dags/simples3bucketpipeline.py    421  0.02s             1           0  0.11s           2024-09-09T17:20:15
+/opt/airflow/dags/practice.py                                         1           0  0.07s           2024-09-09T17:20:15
+================================================================================
+[2024-09-09T17:21:16.247+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           446  0.00s             0           0  0.05s           2024-09-09T17:20:45
+/opt/airflow/dags/simples3bucketpipeline.py    443  0.01s             1           0  0.12s           2024-09-09T17:20:45
+/opt/airflow/dags/practice.py                                         1           0  0.08s           2024-09-09T17:20:45
+================================================================================
+[2024-09-09T17:21:46.714+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           468  0.01s             0           0  0.04s           2024-09-09T17:21:16
+/opt/airflow/dags/simples3bucketpipeline.py    465  0.03s             1           0  0.10s           2024-09-09T17:21:16
+/opt/airflow/dags/practice.py                                         1           0  0.09s           2024-09-09T17:21:16
+================================================================================
+[2024-09-09T17:22:17.241+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           490  0.01s             0           0  0.06s           2024-09-09T17:21:46
+/opt/airflow/dags/simples3bucketpipeline.py    487  0.02s             1           0  0.16s           2024-09-09T17:21:46
+/opt/airflow/dags/practice.py                                         1           0  0.09s           2024-09-09T17:21:46
+================================================================================
+[2024-09-09T17:22:47.647+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           512  0.00s             0           0  0.04s           2024-09-09T17:22:17
+/opt/airflow/dags/simples3bucketpipeline.py    509  0.03s             1           0  0.11s           2024-09-09T17:22:17
+/opt/airflow/dags/practice.py                                         1           0  0.08s           2024-09-09T17:22:17
+================================================================================
+[2024-09-09T17:23:18.209+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           546  0.02s             0           0  0.05s           2024-09-09T17:22:47
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.14s           2024-09-09T17:23:08
+/opt/airflow/dags/practice.py                  549  0.01s             1           0  0.08s           2024-09-09T17:22:47
+================================================================================
+[2024-09-09T17:23:48.616+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           568  0.02s             0           0  0.06s           2024-09-09T17:23:18
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:23:38
+/opt/airflow/dags/practice.py                  571  0.01s             1           0  0.09s           2024-09-09T17:23:18
+================================================================================
+[2024-09-09T17:24:19.087+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           595  0.03s             0           0  0.04s           2024-09-09T17:23:48
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:24:05
+/opt/airflow/dags/practice.py                  598  0.01s             1           0  0.08s           2024-09-09T17:23:48
+================================================================================
+[2024-09-09T17:24:49.498+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           617  0.02s             0           0  0.06s           2024-09-09T17:24:19
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.19s           2024-09-09T17:24:36
+/opt/airflow/dags/practice.py                  620  0.00s             1           0  0.08s           2024-09-09T17:24:19
+================================================================================
+[2024-09-09T17:25:11.777+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T17:25:11.789+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T17:25:19.918+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           639  0.02s             0           0  0.05s           2024-09-09T17:24:49
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.10s           2024-09-09T17:25:06
+/opt/airflow/dags/practice.py                  642  0.00s             1           0  0.08s           2024-09-09T17:24:49
+================================================================================
+[2024-09-09T17:25:50.342+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           661  0.02s             0           0  0.05s           2024-09-09T17:25:19
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.12s           2024-09-09T17:25:37
+/opt/airflow/dags/practice.py                  664  0.00s             1           0  0.08s           2024-09-09T17:25:19
+================================================================================
+[2024-09-09T17:26:20.726+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           683  0.02s             0           0  0.05s           2024-09-09T17:25:50
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:26:07
+/opt/airflow/dags/practice.py                  686  0.00s             1           0  0.08s           2024-09-09T17:25:50
+================================================================================
+[2024-09-09T17:26:51.155+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           705  0.02s             0           0  0.05s           2024-09-09T17:26:20
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.15s           2024-09-09T17:26:21
+/opt/airflow/dags/practice.py                  708  0.01s             1           0  0.08s           2024-09-09T17:26:20
+================================================================================
+[2024-09-09T17:27:21.563+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           735  0.01s             0           0  0.05s           2024-09-09T17:26:51
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:26:52
+/opt/airflow/dags/practice.py                  738  0.00s             1           0  0.08s           2024-09-09T17:26:51
+================================================================================
+[2024-09-09T17:27:51.997+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           757  0.02s             0           0  0.04s           2024-09-09T17:27:21
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:27:22
+/opt/airflow/dags/practice.py                  760  0.01s             1           0  0.08s           2024-09-09T17:27:21
+================================================================================
+[2024-09-09T17:28:22.435+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           779  0.03s             0           0  0.06s           2024-09-09T17:27:52
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:27:53
+/opt/airflow/dags/practice.py                  782  0.00s             1           0  0.09s           2024-09-09T17:27:52
+================================================================================
+[2024-09-09T17:28:52.879+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           801  0.02s             0           0  0.06s           2024-09-09T17:28:22
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:28:23
+/opt/airflow/dags/practice.py                  804  0.00s             1           0  0.09s           2024-09-09T17:28:22
+================================================================================
+[2024-09-09T17:29:23.304+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           823  0.03s             0           0  0.06s           2024-09-09T17:28:52
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.07s           2024-09-09T17:28:53
+/opt/airflow/dags/practice.py                  826  0.00s             1           0  0.08s           2024-09-09T17:28:52
+================================================================================
+[2024-09-09T17:29:53.721+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           845  0.02s             0           0  0.06s           2024-09-09T17:29:23
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:29:24
+/opt/airflow/dags/practice.py                  848  0.00s             1           0  0.09s           2024-09-09T17:29:23
+================================================================================
+[2024-09-09T17:30:12.007+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T17:30:12.023+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T17:30:24.211+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           867  0.02s             0           0  0.05s           2024-09-09T17:29:53
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:29:54
+/opt/airflow/dags/practice.py                  870  0.00s             1           0  0.08s           2024-09-09T17:29:53
+================================================================================
+[2024-09-09T17:30:54.644+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           889  0.02s             0           0  0.05s           2024-09-09T17:30:24
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:30:25
+/opt/airflow/dags/practice.py                  892  0.00s             1           0  0.08s           2024-09-09T17:30:24
+================================================================================
+[2024-09-09T17:31:25.062+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           911  0.02s             0           0  0.05s           2024-09-09T17:30:54
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:30:55
+/opt/airflow/dags/practice.py                  914  0.00s             1           0  0.09s           2024-09-09T17:30:54
+================================================================================
+[2024-09-09T17:31:55.425+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           942  0.02s             0           0  0.05s           2024-09-09T17:31:25
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:31:26
+/opt/airflow/dags/practice.py                  945  0.00s             1           0  0.12s           2024-09-09T17:31:25
+================================================================================
+[2024-09-09T17:32:25.854+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           973  0.01s             0           0  0.06s           2024-09-09T17:31:55
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:31:56
+/opt/airflow/dags/practice.py                  976  0.00s             1           0  0.10s           2024-09-09T17:31:55
+================================================================================
+[2024-09-09T17:32:56.247+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py           995  0.02s             0           0  0.04s           2024-09-09T17:32:25
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.12s           2024-09-09T17:32:27
+/opt/airflow/dags/practice.py                  998  0.00s             1           0  0.07s           2024-09-09T17:32:25
+================================================================================
+[2024-09-09T17:33:26.674+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1017  0.02s             0           0  0.05s           2024-09-09T17:32:56
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:32:57
+/opt/airflow/dags/practice.py                 1020  0.01s             1           0  0.10s           2024-09-09T17:32:56
+================================================================================
+[2024-09-09T17:33:57.069+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1039  0.03s             0           0  0.06s           2024-09-09T17:33:26
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.11s           2024-09-09T17:33:27
+/opt/airflow/dags/practice.py                 1042  0.00s             1           0  0.09s           2024-09-09T17:33:26
+================================================================================
+[2024-09-09T17:34:27.623+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1068  0.04s             0           0  0.10s           2024-09-09T17:33:57
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.18s           2024-09-09T17:33:58
+/opt/airflow/dags/practice.py                 1071  0.00s             1           0  0.19s           2024-09-09T17:33:57
+================================================================================
+[2024-09-09T17:34:58.089+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1090  0.03s             0           0  0.08s           2024-09-09T17:34:27
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:34:28
+/opt/airflow/dags/practice.py                 1093  0.00s             1           0  0.11s           2024-09-09T17:34:27
+================================================================================
+[2024-09-09T17:35:12.320+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T17:35:12.332+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T17:35:28.553+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1112  0.02s             0           0  0.06s           2024-09-09T17:34:58
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:34:59
+/opt/airflow/dags/practice.py                 1115  0.01s             1           0  0.08s           2024-09-09T17:34:58
+================================================================================
+[2024-09-09T17:35:58.954+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1143  0.02s             0           0  0.05s           2024-09-09T17:35:28
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:35:29
+/opt/airflow/dags/practice.py                 1146  0.00s             1           0  0.09s           2024-09-09T17:35:28
+================================================================================
+[2024-09-09T17:36:29.471+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1165  0.08s             0           0  0.06s           2024-09-09T17:35:58
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.07s           2024-09-09T17:36:00
+/opt/airflow/dags/practice.py                 1168  0.00s             1           0  0.10s           2024-09-09T17:35:59
+================================================================================
+[2024-09-09T17:37:00.067+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1211  0.02s             0           0  0.14s           2024-09-09T17:36:29
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:36:52
+/opt/airflow/dags/practice.py                 1214  0.00s             1           0  0.12s           2024-09-09T17:36:29
+================================================================================
+[2024-09-09T17:37:30.439+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1232  0.02s             0           0  0.05s           2024-09-09T17:37:00
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.11s           2024-09-09T17:37:22
+/opt/airflow/dags/practice.py                 1235  0.01s             1           0  0.08s           2024-09-09T17:37:00
+================================================================================
+[2024-09-09T17:38:00.813+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1254  0.02s             0           0  0.05s           2024-09-09T17:37:30
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:37:52
+/opt/airflow/dags/practice.py                 1257  0.00s             1           0  0.08s           2024-09-09T17:37:30
+================================================================================
+[2024-09-09T17:38:31.230+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1276  0.03s             0           0  0.05s           2024-09-09T17:38:00
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.10s           2024-09-09T17:38:23
+/opt/airflow/dags/practice.py                 1279  0.00s             1           0  0.08s           2024-09-09T17:38:00
+================================================================================
+[2024-09-09T17:39:01.679+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1297  0.02s             0           0  0.07s           2024-09-09T17:38:31
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.10s           2024-09-09T17:38:53
+/opt/airflow/dags/practice.py                 1300  0.00s             1           0  0.09s           2024-09-09T17:38:31
+================================================================================
+[2024-09-09T17:39:32.078+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1319  0.03s             0           0  0.05s           2024-09-09T17:39:01
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.11s           2024-09-09T17:39:24
+/opt/airflow/dags/practice.py                 1322  0.01s             1           0  0.08s           2024-09-09T17:39:01
+================================================================================
+[2024-09-09T17:40:02.555+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1341  0.03s             0           0  0.09s           2024-09-09T17:39:32
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.25s           2024-09-09T17:39:54
+/opt/airflow/dags/practice.py                 1344  0.01s             1           0  0.15s           2024-09-09T17:39:32
+================================================================================
+[2024-09-09T17:40:12.763+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T17:40:12.775+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T17:40:33.409+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1363  0.17s             0           0  0.17s           2024-09-09T17:40:02
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.94s           2024-09-09T17:40:26
+/opt/airflow/dags/practice.py                 1366  0.03s             1           0  0.26s           2024-09-09T17:40:02
+================================================================================
+[2024-09-09T17:41:04.048+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1394  0.04s             0           0  0.28s           2024-09-09T17:40:33
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.45s           2024-09-09T17:40:57
+/opt/airflow/dags/practice.py                 1397  0.01s             1           0  0.33s           2024-09-09T17:40:33
+================================================================================
+[2024-09-09T17:41:34.450+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1416  0.01s             0           0  0.20s           2024-09-09T17:41:04
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.12s           2024-09-09T17:41:27
+/opt/airflow/dags/practice.py                 1419  0.00s             1           0  0.39s           2024-09-09T17:41:04
+================================================================================
+[2024-09-09T17:42:04.657+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1438  0.01s             0           0  0.04s           2024-09-09T17:41:34
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:41:57
+/opt/airflow/dags/practice.py                 1441  0.00s             1           0  0.08s           2024-09-09T17:41:34
+================================================================================
+[2024-09-09T17:42:34.920+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1460  0.01s             0           0  0.03s           2024-09-09T17:42:04
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:42:27
+/opt/airflow/dags/practice.py                 1463  0.00s             1           0  0.07s           2024-09-09T17:42:04
+================================================================================
+[2024-09-09T17:43:05.173+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1482  0.01s             0           0  0.04s           2024-09-09T17:42:34
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.07s           2024-09-09T17:42:58
+/opt/airflow/dags/practice.py                 1485  0.00s             1           0  0.08s           2024-09-09T17:42:34
+================================================================================
+[2024-09-09T17:43:35.517+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1504  0.01s             0           0  0.04s           2024-09-09T17:43:05
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:43:28
+/opt/airflow/dags/practice.py                 1507  0.00s             1           0  0.08s           2024-09-09T17:43:05
+================================================================================
+[2024-09-09T17:44:05.899+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1526  0.02s             0           0  0.04s           2024-09-09T17:43:35
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.07s           2024-09-09T17:43:58
+/opt/airflow/dags/practice.py                 1529  0.00s             1           0  0.08s           2024-09-09T17:43:35
+================================================================================
+[2024-09-09T17:44:36.295+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1548  0.01s             0           0  0.07s           2024-09-09T17:44:05
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.07s           2024-09-09T17:44:29
+/opt/airflow/dags/practice.py                 1551  0.00s             1           0  0.15s           2024-09-09T17:44:06
+================================================================================
+[2024-09-09T17:45:06.551+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1570  0.01s             0           0  0.04s           2024-09-09T17:44:36
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.19s           2024-09-09T17:44:59
+/opt/airflow/dags/practice.py                 1573  0.00s             1           0  0.08s           2024-09-09T17:44:36
+================================================================================
+[2024-09-09T17:45:13.663+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T17:45:13.677+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T17:45:36.871+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1592  0.01s             0           0  0.04s           2024-09-09T17:45:06
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.13s           2024-09-09T17:45:29
+/opt/airflow/dags/practice.py                 1595  0.00s             1           0  0.08s           2024-09-09T17:45:06
+================================================================================
+[2024-09-09T17:46:07.160+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1614  0.01s             0           0  0.04s           2024-09-09T17:45:36
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.20s           2024-09-09T17:46:00
+/opt/airflow/dags/practice.py                 1617  0.00s             1           0  0.08s           2024-09-09T17:45:36
+================================================================================
+[2024-09-09T17:46:37.400+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1636  0.01s             0           0  0.04s           2024-09-09T17:46:07
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.23s           2024-09-09T17:46:30
+/opt/airflow/dags/practice.py                 1639  0.00s             1           0  0.11s           2024-09-09T17:46:07
+================================================================================
+[2024-09-09T17:47:07.713+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1658  0.01s             0           0  0.03s           2024-09-09T17:46:37
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:47:00
+/opt/airflow/dags/practice.py                 1661  0.00s             1           0  0.10s           2024-09-09T17:46:37
+================================================================================
+[2024-09-09T17:47:38.063+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1680  0.01s             0           0  0.04s           2024-09-09T17:47:07
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:47:31
+/opt/airflow/dags/practice.py                 1683  0.00s             1           0  0.08s           2024-09-09T17:47:07
+================================================================================
+[2024-09-09T17:48:08.421+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1702  0.01s             0           0  0.03s           2024-09-09T17:47:38
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:48:01
+/opt/airflow/dags/practice.py                 1705  0.00s             1           0  0.07s           2024-09-09T17:47:38
+================================================================================
+[2024-09-09T17:48:38.726+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1724  0.01s             0           0  0.04s           2024-09-09T17:48:08
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:48:31
+/opt/airflow/dags/practice.py                 1727  0.00s             1           0  0.13s           2024-09-09T17:48:08
+================================================================================
+[2024-09-09T17:49:09.015+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1746  0.01s             0           0  0.03s           2024-09-09T17:48:38
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.13s           2024-09-09T17:49:02
+/opt/airflow/dags/practice.py                 1749  0.00s             1           0  0.07s           2024-09-09T17:48:38
+================================================================================
+[2024-09-09T17:49:39.347+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1768  0.02s             0           0  0.03s           2024-09-09T17:49:09
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.08s           2024-09-09T17:49:32
+/opt/airflow/dags/practice.py                 1771  0.00s             1           0  0.07s           2024-09-09T17:49:09
+================================================================================
+[2024-09-09T17:50:09.676+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1790  0.01s             0           0  0.04s           2024-09-09T17:49:39
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:50:02
+/opt/airflow/dags/practice.py                 1793  0.00s             1           0  0.07s           2024-09-09T17:49:39
+================================================================================
+[2024-09-09T17:50:13.747+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-09-09T17:50:13.762+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2024-09-09T17:50:40.062+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1811  0.02s             0           0  0.04s           2024-09-09T17:50:09
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.11s           2024-09-09T17:50:33
+/opt/airflow/dags/practice.py                 1814  0.00s             1           0  0.07s           2024-09-09T17:50:09
+================================================================================
+[2024-09-09T17:51:10.493+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1833  0.01s             0           0  0.04s           2024-09-09T17:50:40
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.09s           2024-09-09T17:51:03
+/opt/airflow/dags/practice.py                 1836  0.00s             1           0  0.08s           2024-09-09T17:50:40
+================================================================================
+[2024-09-09T17:51:40.905+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/simple_pipeline.py          1855  0.01s             0           0  0.04s           2024-09-09T17:51:10
+/opt/airflow/dags/simples3bucketpipeline.py                           1           0  0.12s           2024-09-09T17:51:33
+/opt/airflow/dags/practice.py                 1858  0.00s             1           0  0.07s           2024-09-09T17:51:10
+================================================================================

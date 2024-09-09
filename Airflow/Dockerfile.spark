@@ -1,0 +1,23 @@
+FROM bitnami/spark:latest
+
+USER root
+
+# Install dependencies for downloading OpenJDK
+RUN apt-get update && \
+    apt-get install -y curl wget tar && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# # Download and install OpenJDK 8 manually
+# RUN wget https://download.java.net/openjdk/jdk8u41/ri/openjdk-8u41-b04-linux-x64-14_jan_2020.tar.gz && \
+#     tar -xvzf openjdk-8u41-b04-linux-x64-14_jan_2020.tar.gz && \
+#     mkdir -p /usr/lib/jvm/java-8-openjdk-amd64 && \
+#     mv java-se-8u41-ri/* /usr/lib/jvm/java-8-openjdk-amd64/ && \
+#     rm -rf java-se-8u41-ri && \
+#     rm openjdk-8u41-b04-linux-x64-14_jan_2020.tar.gz
+
+# # Set JAVA_HOME environment variable
+# ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+# ENV PATH $JAVA_HOME/bin:$PATH
+
+USER 1001
